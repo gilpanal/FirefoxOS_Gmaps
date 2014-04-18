@@ -1,0 +1,21 @@
+{
+  "name": "Geolocalización",
+  "version":"0.0.1",
+  "description": "Ejemplo de cómo calcular rutas con gmaps.js en Firefox OS",
+  "launch_path": "/index.html",
+  "icons": {
+    "60": "/img/icon60.png",
+    "128": "/img/icon128.png"
+  },
+  "developer": {
+    "name": "gilpanal",
+    "url": "https://github.com/gilpanal"
+  },
+  "default_locale": "es",
+  "type": "privileged",
+  "permissions": {
+        "geolocation": {
+            "description": "Marking out user location"
+        }
+    }
+}

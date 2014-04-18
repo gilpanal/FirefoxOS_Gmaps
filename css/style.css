@@ -1,0 +1,47 @@
+*  { margin: 0; padding: 0; }
+body{
+	font-family: 'Droid Sans', 'Helvetica', Arial, sans-serif;
+	background: #eee;
+}
+
+header{ margin-top:20px; margin-left:5px; margin-bottom:20px; text-align: center;}    
+aside {  margin-top: 20px; margin-bottom: 20px; margin-left: 10px; } 
+section { float: right; width: 100%; height: 100%;margin-bottom:40px;	} 
+footer{  padding:10px 20px; clear: both;   background: #999; text-align: center;}
+
+.btn{
+	color:#fff;
+	text-decoration:none;
+	padding:10px 20px;
+	margin:0 2px;
+	border-radius:3px;
+	border-top:#4c82b7 solid 1px;
+	border-left:#4c82b7 solid 1px;
+	border-bottom:#3e6d9c solid 1px;
+	border-right:#3e6d9c solid 1px;
+	background:#4477aa;
+	background-image: linear-gradient(bottom, rgb(59,104,149) 50%, rgb(68,119,170) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(59,104,149) 50%, rgb(68,119,170) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(59,104,149) 50%, rgb(68,119,170) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(59,104,149) 50%, rgb(68,119,170) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(59,104,149) 50%, rgb(68,119,170) 100%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.5, rgb(59,104,149)),
+		color-stop(1, rgb(68,119,170))
+		);
+}
+.map {
+	display: block;
+	width: 95%;
+	height: 400px;
+	margin-top:20px;	 
+	margin: 0 auto;
+	-moz-box-shadow: 0px 5px 20px #ccc;
+	-webkit-box-shadow: 0px 5px 20px #CCC;
+	box-shadow: 0px 5px 20px #CCC;
+}
+
