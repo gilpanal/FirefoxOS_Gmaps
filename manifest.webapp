@@ -4,12 +4,15 @@
   "description": "Ejemplo de cómo calcular rutas con gmaps.js en Firefox OS",
   "launch_path": "/index.html",
   "icons": {
+   "16": "/img/icon16.png",
+   "32": "/img/icon32.png",
+   "48": "/img/icon48.png",
     "60": "/img/icon60.png",
     "128": "/img/icon128.png"
   },
   "developer": {
     "name": "gilpanal",
-    "url": "https://github.com/gilpanal"
+    "url": "https://github.com/gilpanal/FirefoxOS_Gmaps"
   },
   "default_locale": "es",
   "type": "privileged",
