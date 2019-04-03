@@ -7,18 +7,17 @@
          if(_last){
             map.removeMarkers();
             map.removePolylines();
-            compactarRuta(_ini, _last);
+            compactRuta(_ini, _last);
           }
 
     });
 
-      function compactarRuta(inicio, final_point){
+      function compactRuta(inicio, final_point){
 
         map.addMarker({ lat: inicio.lat, lng: inicio.lng});
 
          map.drawRoute({
-          origin: [inicio.lat, inicio.lng],  // origen en coordenadas anteriores
-          // destino en coordenadas del click o toque actual
+          origin: [inicio.lat, inicio.lng],         
           destination: [final_point.lat,final_point.lng],
           travelMode: 'driving',
           strokeColor: '#000000',
@@ -29,12 +28,9 @@
         map.addMarker({ lat: final_point.lat, lng: final_point.lng});
       }
 
-      function enlazarMarcador(e){
-
-       // muestra ruta entre marcas anteriores y actuales
+      function connectMarker(e){
         map.drawRoute({
-          origin: [lat, lng],  // origen en coordenadas anteriores
-          // destino en coordenadas del click o toque actual
+          origin: [lat, lng],           
           destination: [e.latLng.lat(), e.latLng.lng()],
           travelMode: 'driving',
           strokeColor: '#000000',
@@ -42,38 +38,38 @@
           strokeWeight: 5
         });
 
-        lat = e.latLng.lat();   // guarda coords para marca siguiente
+        lat = e.latLng.lat();   
         lng = e.latLng.lng();
 
-        _last= {lat: lat, lng: lng}; // guarda el ultimo marcador establecido
+        _last= {lat: lat, lng: lng}; 
 
-        map.addMarker({ lat: lat, lng: lng});  // pone marcador en mapa
+        map.addMarker({ lat: lat, lng: lng});  
       };
 
-      function geolocalizar(){
+      function geolocateWrapper(){
         GMaps.geolocate({
           success: function(position){
-            lat = position.coords.latitude;  // guarda coords en lat y lng
+            lat = position.coords.latitude;  
             lng = position.coords.longitude;
 
-            map = new GMaps({  // muestra mapa centrado en coords [lat, lng]
+            map = new GMaps({  
               el: '#map',
               lat: lat,
               lng: lng,
-              click: enlazarMarcador,
-              tap: enlazarMarcador
+              click: connectMarker,
+              tap: connectMarker
             });
-            // guarda el marcador inicial en una variable para su posterior recuperacion
+           
             if(!_ini){
               
               _ini = { lat: lat, lng: lng};
             }
-            map.addMarker({ lat: lat, lng: lng});  // marcador en [lat, lng]
+            map.addMarker({ lat: lat, lng: lng}); 
           },
-          error: function(error) { alert('Geolocalización falla: '+error.message); },
-          not_supported: function(){ alert("Su navegador no soporta geolocalización"); },
+          error: function(error) { alert('Geolocation failed: '+error.message); },
+          not_supported: function(){ alert("Sorry, your browser does not support Location API"); },
         });
       };
 
-      geolocalizar();
+      geolocateWrapper();
     });
